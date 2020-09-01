@@ -1,37 +1,29 @@
-# Zaribo/Prusa i3 MK3s - Duet 2 WiFi - RRF 3.11
+# Prusa style printer  based on CR10 V2 - Duet 2 WiFi - RRF 3.11
 
-## MK3s - Duet 2 WiFi wiring guide [PDF](Duet-MK3s.pdf)    
-## Latest file listing: [md](latest-file-dump.md)  
-<br>
 
-## **Hardware changes from stock MK3s:**
 
-*Note: The config.g file contains notes to facilitate easy adaptation to stock Prusa MK3s.*
+## **Hardware changes from stock CR10 V2:**
 
-- Zaribo 220 MK3s Rel3 frame, 10mm movement with Y-blocks  
+- 12mm linear rails and mounts from:
 
-- Bondtech Mosquito Extruder (direct feed), modified design to use BLTouch    
+- MGN12 on Z axis
 
-- 0.9 X axis stepper motor, LDO-42STH48-MAC
+- MGN9 on X axis
 
-- 0.9 Y axis stepper motor, LDO-42STH60-MAC
+- Voron Afterburner (direct drive), modified x carriage:    
 
-- 1.8 Z axis stepper motors(2), Zaribo 220 teflon coated lead screws  
+- 1.8 Bondtech 25mm pancake stepper
 
 - Duet 2, WiFi - RRF 3.11 
   
 - PanelDue 5i  
   
-- PT1000 hotend thermistor  
+- Dragon Hotend, E3d thermistor and heater 40W
   
-- BLTouch v3.1  
-  
-- Hotend fan, 24VDC, 6.0 CFM / Digi-Key: G4010L24B-RSR
-  
-- Part cooling blower, 24VDC, 5.0 CFM / Digi-Key: B5015E24B-BSR
+- 4 Precision Piezo Andromeda mounted under the bed  
   
   <br><br>
-
+## **:Next section needs to be changed**  
 ## **:interrobang:What do those hardware changes mean for your config?**  
 **:wrench:Motors, microstepping resolution, and steps/mm.**  
 Unless you have the same setup as referenced above, you may have to change the microstepping resolution and the steps per millimeter located in the 'config.g' file. To retrieve your current machine's configuration, issue an M503 command in the terminal connected to the running printer. Pay attention to the microstepping assigned to the axis as that can change your steps per millimeter. Read through the /sys/config.g file comments and make the applicable changes as needed.  *More about this can be read here: https://duet3d.dozuki.com/Wiki/Choosing_and_connecting_stepper_motors, here: https://www.linearmotiontips.com/microstepping-basics/, and here: https://blog.prusaprinters.org/calculator3416/.*  
